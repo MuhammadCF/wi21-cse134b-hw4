@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw4 part2</title>
+</head>
+<body>
+
+    <button id="alert">Alert</button>
+    <button id="confirm">Confirm</button>
+    <button id="prompt">Prompt</button>
+
+    <dialog id="alertDialog">
+        <form method="dialog">
+            <p>This is an alert!!!</p>
+            <button >Ok</button>
+        </form>
+    </dialog>
+
+    <dialog id="confirmDialog">
+        <form method="dialog">
+            <p>Do you want to confirm?</p>
+
+            <button value="1">Ok</button>
+            <button value="">Cancel</button>
+        </form>
+    </dialog>
+    
+    <dialog id="promptDialog">
+        <form method="dialog">
+            <p>Please insert something:</p>
+            <input type="text">
+            <button value="1">Ok</button>
+            <button value="">Cancel</button>
+
+        </form>
+    </dialog>
+
+    <output></output>
+
+    <!-- <script type="text/javascript" src="./purify.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.6/purify.min.js" integrity="sha512-rXAHWSMciPq2KsOxTvUeYNBb45apbcEXUVSIexVPOBnKfD/xo99uUe5M2OOsC49hGdUrkRLYsATkQQHMzUo/ew==" crossorigin="anonymous"></script>
+    <script>
+        function getCleanInput(text){
+            return DOMPurify.sanitize(text);
+        }
+    </script>
+    <script type="module" src="scripts/customdialog.js"></script>
+    
+    
+</body>
+</html>

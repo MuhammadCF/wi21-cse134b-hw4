@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW4 part1</title>
+    
+</head>
+
+<body>
+
+    <button id="alert">Alert</button>
+    <button id="confirm">Confirm</button>
+    <button id="prompt">Prompt</button>
+    <button id="safeprompt">Safer Prompt</button>
+    <br>    <output></output>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.6/purify.min.js" integrity="sha512-rXAHWSMciPq2KsOxTvUeYNBb45apbcEXUVSIexVPOBnKfD/xo99uUe5M2OOsC49hGdUrkRLYsATkQQHMzUo/ew==" crossorigin="anonymous"></script>
+    <script>
+
+        document.getElementById('alert').addEventListener('click', () => {
+            const output = document.querySelector('output');
+            output.innerHTML = "";
+            setTimeout(() => {
+                alert('alert was pressed');
+
+            }, 250);
+        })
+
+        document.getElementById('confirm').addEventListener('click', () => {
+            const output = document.querySelector('output');
+            output.innerHTML = "";
+            setTimeout(() => {
+                if(confirm('do you confirm this?')){
+                    output.innerHTML = "The value returned by the confirm method is : Yes";
+                    
+                }
+                else{
+                    output.innerHTML = "The value returned by the confirm method is : No";
+
+                }
+            }, 250);
+        })
+
+        document.getElementById('prompt').addEventListener('click', () => {
+            const output = document.querySelector('output');
+            output.innerHTML = "";
+            setTimeout(() => {
+                let answer = prompt("Please insert a value: ");
+                if(answer == null || answer == ""){
+                    output.innerHTML = "User didn't enter anything";
+                    
+                }
+                else{
+                    output.innerHTML = `The value returned by the prompt method is : ${answer}`;
+
+
+                }
+
+            }, 250);
+        })
+
+        document.getElementById('safeprompt').addEventListener('click', () => {
+            const output = document.querySelector('output');
+            output.innerHTML = "";
+            setTimeout(() => {
+                let answer = prompt("Please insert a value: ");
+                if(answer == null || answer == ""){
+                    output.innerHTML = "User didn't enter anything";
+                    
+                }
+                else{
+                    answer = DOMPurify.sanitize(answer);
+                    output.innerHTML = `The value returned by the prompt method is : ${answer}`;
+
+                    //<b onmouseover="alert('pawned')">Roll Me!!</b>
+                }
+
+            }, 250);
+        });
+
+    </script>
+    
+</body>
+</html>
