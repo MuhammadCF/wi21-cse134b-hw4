@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw4 part4 styled crud</title>
+    <link rel="stylesheet" href="style/fontello.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Blog Posts</h1>
+        <ul id="entries">
+            <li id="0">
+                <span class="content">10 best noodle recipes-1/3/2021-curated
+                collection of recipes for noodles from different cultures</span>
+                <button class="editBtn icon-pencil">Edit</button>
+                <button class="deleteBtn icon-trash">Delete</button>
+            </li>
+            <li id="1">
+                <span class="content">10 best operating systems-1/3/2021-curated 
+                    collection of highly popular OS
+                </span>
+                <button class="editBtn icon-pencil">Edit</button>
+                <button class="deleteBtn icon-trash">Delete</button>
+            </li>
+        </ul>
+
+        <Button id="addBtn">Add</Button>
+
+
+
+        <dialog id="addDialog">
+            <form method="dialog">
+                <p>Add new blog posts</p>
+
+                <input type="text" class="title">
+                <input type="date" class="date">
+                <input type="text" class="summary">
+
+
+                <button value="1">Save</button>
+                <button value="">Cancel</button>
+            </form>
+        </dialog>
+    
+        <dialog id="editDialog">
+            <form method="dialog">
+                <p>Edit blog posts</p>
+
+                <input type="text" class="title">
+                <input type="date" class="date">
+                <input type="text" class="summary">
+
+
+                <button value="1">Save</button>
+                <button value="">Cancel</button>
+            </form>
+        </dialog>
+        
+        <dialog id="deleteDialog">
+            <form method="dialog">
+                <p>Are you sure???</p>
+
+                <button value="1">Ok</button>
+                <button value="">Cancel</button>
+    
+            </form>
+        </dialog>
+    
+        <output></output>
+    
+        <!-- <script type="text/javascript" src="./purify.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.6/purify.min.js" integrity="sha512-rXAHWSMciPq2KsOxTvUeYNBb45apbcEXUVSIexVPOBnKfD/xo99uUe5M2OOsC49hGdUrkRLYsATkQQHMzUo/ew==" crossorigin="anonymous"></script>
+        <script>
+            function getCleanInput(text){
+                return DOMPurify.sanitize(text);
+            }
+        </script>
+        <script type="module" src="scripts/crud.js"></script>
+
+    </div>
+    
+</body>
+</html>
