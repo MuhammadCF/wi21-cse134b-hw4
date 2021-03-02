@@ -122,9 +122,11 @@ var createNewEntry = function () {
 
 
     editButton.classList.add("editBtn");
+    editButton.classList.add("icon-pencil");
     editButton.textContent = "Edit";
 
     deleteButton.classList.add("deleteBtn");
+    deleteButton.classList.add("icon-trash");
     deleteButton.textContent = "Delete";
 
     content.classList.add("content");
